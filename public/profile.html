@@ -3,17 +3,39 @@
   <title>Express</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url('images/BSUCollage.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .white-box {
+      background-color: rgba(249, 249, 249, 0.703);
+      padding: 5px;
+      text-align: center;
+      width: 200px; /* Adjust this value as needed */
+      height: auto; /* Adjust this value as needed, or leave it out for automatic height */
+      margin: auto;
+    }
+  </style>
+
+  
 </head>
 <body>
-  <nav class="menu">
-		<ul>
-			<li><a href="/">Back to Home</a> | </li>
-			<li><a href="logout">Log out</a></li>
-		</ul>
-  </nav>
+  <div class="white-box">
+    <nav class="menu">
+      <ul>
+        <li><a href="/">Back to Home</a> | </li>
+        <li><a href="logout">Log out</a></li>
+      </ul>
+    </nav>
+  </div>
   <h1><div id="name"></div> </h1>
-  <h2>Welcome to your profile!</h2>
-  <h3>Feel free to make this page user friendly.</h3>
+  <h2 class="white-box">Welcome to your profile!</h2>
+  <h3 class="white-box">Feel free to make this page user friendly.</h3>
   <br>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
