@@ -1,15 +1,28 @@
 <html>
 <head>
   <title>Express</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/profile.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    body {
-      background-image: url('images/BSUCollage.jpg');
-      background-size: cover;
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    
+    .bg {
+      /* The image used */
+      background-image: url("images/BSUCollage.jpg");
+    
+      /* Full height */
+      height: 100%; 
+    
+      /* Center and scale the image nicely */
+      background-position: center;
       background-repeat: no-repeat;
-      background-position: center center;
+      background-size: cover;
     }
 
     .white-box {
@@ -20,23 +33,28 @@
       height: auto; /* Adjust this value as needed, or leave it out for automatic height */
       margin: auto;
     }
+    
   </style>
 
   
 </head>
 <body>
-  <div class="white-box">
-    <nav class="menu">
-      <ul>
-        <li><a href="/">Back to Home</a> | </li>
-        <li><a href="logout">Log out</a></li>
-      </ul>
-    </nav>
+  <div class="topnav">
+    <a class="active" href="profile">Home</a>
+    <a href="signup">Track & Field Performance List </a>
+    <a href="logout">Log Out</a>
   </div>
-  <h1><div id="name"></div> </h1>
-  <h2 class="white-box">Welcome to your profile!</h2>
-  <h3 class="white-box">Feel free to make this page user friendly.</h3>
-  <br>
+  
+  <div style="padding-left:16px">
+    <h1>Welcome, <span id="name"></span>!</h1>
+    <p>This is our Track and Field Data tracker where we keep all preformances here</p>
+  </div>
+
+  <div class="white-box">
+    
+  </div>
+  <div class="bg"></div>
+  
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get('name');
