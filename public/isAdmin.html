@@ -1,22 +1,63 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Express</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 <body>
   <h1>Input Track and Field Data!</h1>
   <p>Please fill in all the boxes below:</p>
 <hr style="outline: auto;">
 <form>
-    <div>Name:<input class="form-control" type="text" name="name" placeholder="name"></div>
-    <div>Event:<input class="form-control" type="text" name="event" placeholder="event"></div>
+    <div>Name:<input class="form-control" type="text" name="name" placeholder="name"></div> 
+
+    <div>Event:
+        <select class="form-control" name="event">
+            <option value="">Select event</option>
+            <option value="event1">100 meters </option>
+            <option value="event2">200 meters</option>
+            <option value="event3">400 meters</option>
+            <option value="event4">800 meters</option>
+            <option value="event5">1500 meters</option>
+            <option value="event6">3000m Steeplechase</option>
+            <option value="event7">5000 meters</option>
+            <option value="event8">10000 meters</option>
+            <option value="event9">100m/110m hurdles</option>
+            <option value="event10">400m hurdles</option>
+            <option value="event11">4x100m relay</option>
+            <option value="event12">4x400m relay</option>
+            <option value="event13">4x800m relay</option>
+            <option value="event14">Long Jump</option>
+            <option value="event15">Triple Jump</option>
+            <option value="event16">High Jump</option>
+            <option value="event17">Pole Vault</option>
+            <option value="event18">Discus Throw</option>
+            <option value="event19">Hammer Throw</option>
+            <option value="event20">Javelin Throw</option>
+            <option value="event21">Shot Put</option>
+            <option value="event22">Decathlon</option>
+            <option value="event23">Heptathlon</option>
+            
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
     <div>Time/Mark:<input class="form-control" type="text" name="time" placeholder="time"></div>
-    <div>Gender:<input class="form-control" type="text" name="gender" placeholder="gender"></div>
+
+    <div>Gender:
+        <select class="form-control" name="gender">
+            <option value="">Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
     <div>Year:<input class="form-control" type="text" name="year" placeholder="year"></div>
-    <input class="form-control" type="submit" name="submit" style="background-color: red">
+    
+    <input class="form-control" type="submit" name="submit" style="background-color: red; color: white;">
 </form> 
 </body>
 </html>
-
