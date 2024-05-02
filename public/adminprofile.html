@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>Express</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/profile.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    
+    .bg {
+      /* The image used */
+      background-image: url("images/BSUCollage.jpg");
+    
+      /* Full height */
+      height: 100%; 
+    
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .white-box {
+      background-color: rgba(249, 249, 249, 0.703);
+      padding: 5px;
+      text-align: center;
+      width: 200px; /* Adjust this value as needed */
+      height: auto; /* Adjust this value as needed, or leave it out for automatic height */
+      margin: auto;
+    }
+    
+  </style>
+
+  
+</head>
+<body>
+  <div class="topnav">
+    <a class="active" href="profile"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/trackdatadisplay"><i class="fa fa-list"></i> Track & Field Performance List </a>
+    <a href="/isAdmin"> Add Data Entry</a>
+    <a href="logout"><i class="fa fa-fw fa-user"></i>Log Out</a>
+  </div>
+  
+  <div style="padding-left:16px">
+    <h1>Welcome, <span id="name"></span>!</h1>
+    <p>This is our Track and Field Data tracker where we keep all preformances here</p>
+  </div>
+
+  <div class="white-box">
+    
+  </div>
+  <div class="bg"></div>
+  
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    if (name) {
+      document.getElementById('name').innerHTML = name;
+    }
+  </script>
+</body>
+</html>
