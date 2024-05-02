@@ -74,7 +74,13 @@ router.post('/login',
   function(req, res,next) {
     let prefer = req.user.prefer;
     console.log("fullname: ", prefer);
-    res.redirect('/users/profile?name='+prefer); // Successful. redirect to localhost:3000/users/profile
+    console.log
+    if (req.user.username == 'admin'){
+      res.redirect('/users/adminprofile');
+    }
+    else {
+      res.redirect('/users/profile?name='+prefer); // Successful. redirect to localhost:3000/users/profile
+    }
 });
 
 
