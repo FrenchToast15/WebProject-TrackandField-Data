@@ -130,6 +130,9 @@ router.post('/signup', function(req, res, next) {
 });
 // new stuff ends here
 
+router.get('/index',function(req, res) {
+  res.sendFile(path.join(__dirname,'..', 'public','index.html'));
+});
 
 router.get('/trackdatadisplay', function(req, res, next) {
   // client object enables issuing SQL queries
