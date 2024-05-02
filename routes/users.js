@@ -119,4 +119,31 @@ router.post('/signup', function(req, res, next) {
 });
 // new stuff ends here
 
+
+
+router.get('/trackdatadisplay', function(req, res, next) {
+  // client object enables issuing SQL queries
+  client.query('SELECT * FROM preformancelist', function(err, result){
+    if (err) {next(err);}
+    res.json(result.rows);
+    console.log(result.rows);
+  });
+});
+
+router.get('/isAdmin',function(req, res) {
+  res.sendFile(path.join(__dirname,'..', 'public','isAdmin.html'));
+});
+
+router.post('/isAdmin',function(req, res, next) {
+  client.query('INSERT INTO preformancelist (name, event, preformance, gender, year) VALUES($1, $2, $3, $4, $5)', [req.body.name, req.body.event,req.body.time,req.body.gender, req.body.year ], function(err, result) {
+    if (err) {
+      console.log("unable to query INSERT");
+      return next(err); // throw error to error.hbs.
+    }
+    console.log("Data entry is successful");
+    res.redirect('/users/isAdmin?message=We+added+your+data+successfully!');
+  });
+});
+
+
 module.exports = router;
