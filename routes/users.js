@@ -60,6 +60,11 @@ function notLoggedIn(req, res, next) {
   }
 }
 
+router.get('/adminprofile', function(req, res){
+  //success is set true in sign up page
+  res.sendFile(path.join(__dirname,'..', 'public','adminprofile.html'));
+});
+
 // localhost:3000/users/login
 router.get('/login', notLoggedIn, function(req, res){
   //success is set true in sign up page
@@ -124,7 +129,6 @@ router.post('/signup', function(req, res, next) {
   });
 });
 // new stuff ends here
-
 
 
 router.get('/trackdatadisplay', function(req, res, next) {
